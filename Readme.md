@@ -88,7 +88,6 @@ The following functions have proven useful when looking at AQAnnotations.  When 
 
 If you need to cite AnnotationQueryLocal in your work, please use the following DOI:
 
-TODO - This will be done when I actually add the code to elsevierlabs-os.
-[![DOI]()]()
+[![DOI](https://zenodo.org/badge/194902260.svg)](https://zenodo.org/badge/latestdoi/194902260)
 
 McBeath, Darin (2019). AnnotationQueryLocal [Computer Software];https://github.com/elsevierlabs-os/AnnotationQueryLocal
