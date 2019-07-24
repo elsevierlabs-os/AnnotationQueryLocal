@@ -17,8 +17,7 @@ object Hydrate {
   val logger = org.apache.logging.log4j.LogManager.getLogger("Hydrate")
 
   /**
-   * Local Filesystem implementation
-   * arr - The Array of Annotations that we want to populate the text column with the text for this annotation
+   * arr - The Array of Annotations that we want to populate the text property with the text for this annotation
    * str - The string (for the text) for the document in the Array of Annotations.
    * excludes - Whether we want to include the 'excludes' text.  True means exclude the excluded text.
   */
@@ -26,8 +25,6 @@ object Hydrate {
     
     val TEXT = "text"
     val EXCLUDES = "excludes"   
-    
-    var results:Array[AQAnnotation] = Array.empty[AQAnnotation]
                   
     arr.map(ann => {
       

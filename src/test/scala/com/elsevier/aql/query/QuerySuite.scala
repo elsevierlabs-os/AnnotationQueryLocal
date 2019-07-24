@@ -1,31 +1,9 @@
 package com.elsevier.aql.query
 
-import org.scalatest.FunSuite
-
 import com.elsevier.aql.annotations.AQAnnotation
 import com.elsevier.aql.utilities.GetAQAnnotations
 
-import scala.io.BufferedSource
-
-class QuerySuite extends FunSuite {
-  
-   def getCaretFileAnnots(filename: String) :Array[String] = {
-      val logger = org.apache.logging.log4j.LogManager.getLogger("QuerySuite")
-      var source: Option[BufferedSource] = None
-      var str = ""
-      // Get the document of caret delimited annotations.  
-      try {
-        source = Some(scala.io.Source.fromFile(filename,"utf-8"))
-        str = source.get.mkString
-      } catch {
-        case e: Exception => logger.error("Unable to find document: " + filename)
-      } finally {
-        if (source != None) {
-          source.get.close()
-        } 
-      }
-      str.split("\n")
-  } 
+class QuerySuite extends AQBase {
    
   // Original Markup Annotations
   val omAnnots: Array[AQAnnotation] = GetAQAnnotations(getCaretFileAnnots("src/test/resources/om/S0022314X13001777"),"S0022314X13001777",Array("orig"),Array("orig"),Array("orig"))

@@ -1,49 +1,9 @@
 package com.elsevier.aql.utilities
 
-import org.scalatest.FunSuite
-
 import com.elsevier.aql.annotations.AQAnnotation
 import com.elsevier.aql.query.FilterType
 
-import scala.io.BufferedSource
-
-class HydrateSuite extends FunSuite {
-
-   def getCaretFileAnnots(filename: String) :Array[String] = {
-      val logger = org.apache.logging.log4j.LogManager.getLogger("HydrateSuite")
-      var source: Option[BufferedSource] = None
-      var str = ""
-      // Get the document of caret delimited annotations.  
-      try {
-        source = Some(scala.io.Source.fromFile(filename,"utf-8"))
-        str = source.get.mkString
-      } catch {
-        case e: Exception => logger.error("Unable to find document: " + filename)
-      } finally {
-        if (source != None) {
-          source.get.close()
-        } 
-      }
-      str.split("\n")
-  } 
-   
-  def getStrFile(filename: String) :String = {
-      val logger = org.apache.logging.log4j.LogManager.getLogger("HydrateSuite")
-      var source: Option[BufferedSource] = None
-      var str = ""
-      // Get the str file  
-      try {
-        source = Some(scala.io.Source.fromFile(filename,"utf-8"))
-        str = source.get.mkString
-      } catch {
-        case e: Exception => logger.error("Unable to find document: " + filename)
-      } finally {
-        if (source != None) {
-          source.get.close()
-        } 
-      }
-      str   
-  }
+class HydrateSuite extends AQBase {
    
     test("Check missing annotation file") {
       val aqAnnots: Array[AQAnnotation] = GetAQAnnotations(getCaretFileAnnots("src/test/resources/genia/S0022314X13001777"),"S0022314X13001777",Array("orig","lemma","pos","excludes"),Array("lemma","pos"),Array("orig","lemma"))

@@ -39,12 +39,16 @@ object OrigPosLemConcordancer {
                            .sortBy{ x => x.startOffset}
 
     // Get the raw text for the sentence annotation
-    val text =  try {
+    val text =  if (str == null || str == "") {
+                  ""
+                } else {  
+                  try {
                     str.substring(sentence.startOffset.toInt, sentence.endOffset.toInt)
-                } catch {
-                  case e: Exception =>  {
-                    logger.error(e)
-                    ""
+                  } catch {
+                    case e: Exception =>  {
+                      logger.error(e)
+                      ""
+                    }
                   }
                 }
 

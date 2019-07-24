@@ -39,6 +39,12 @@ object Concordancer  {
     val strsLis = limResults.map(li => {
        var source: Option[BufferedSource] = None
        try {
+        if (str == null || str == "") {
+           "<tr><td>" + li.docId+"</td>" + 
+           "<td>" + li.annotSet+"</td>" +
+           "<td>" + li.annotType+"</td><td><div style='word-break:break-all;'>" +
+           "</div></td></tr>"
+        } else {
         // Get the text for annotation (account for the offset)
         val origText = str.substring(li.startOffset.toInt, li.endOffset.toInt)
       
@@ -119,6 +125,7 @@ object Concordancer  {
         "<font color='green'> &lt; </font>"  + 
         str.substring(li.endOffset.toInt, Math.min(str.length,(li.endOffset + offset).toInt)) + 
         "</div></td></tr>"
+        }
        } catch {
          case e: Exception => logger.error(e)
          "<tr><td>" + li.docId+"</td>" + 
