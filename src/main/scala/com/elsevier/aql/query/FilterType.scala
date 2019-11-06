@@ -19,10 +19,8 @@ object FilterType {
   */
   def apply(arr: Array[AQAnnotation], annotType: String="", annotTypeArr: Array[String]=Array.empty[String], annotTypeCompare: String="=", limit: Integer=0, not: Boolean=false): Array[AQAnnotation] = {
     
-    val lcAnnotType = if (annotType != "")  annotType.toLowerCase else null
-    val lcAnnotTypeArr = if (!annotTypeArr.isEmpty) annotTypeArr.map(_.toLowerCase) else null
-    var rs = arr.filter(x => if (lcAnnotType != null) { if (annotTypeCompare == "=") x.annotType == lcAnnotType else x.annotType != lcAnnotType } else true)
-                .filter(x => if (lcAnnotTypeArr != null) { if (annotTypeCompare == "=") lcAnnotTypeArr contains x.annotType else !(lcAnnotTypeArr contains x.annotType) } else true) 
+    var rs = arr.filter(x => if (annotType != "") { if (annotTypeCompare == "=") x.annotType == annotType else x.annotType != annotType } else true)
+                .filter(x => if (!annotTypeArr.isEmpty) { if (annotTypeCompare == "=") annotTypeArr contains x.annotType else !(annotTypeArr contains x.annotType) } else true) 
 
     if (not) {
       rs = arr.diff(rs)

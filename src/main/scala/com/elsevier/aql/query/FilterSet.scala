@@ -19,10 +19,8 @@ object FilterSet {
   */
   def apply(arr: Array[AQAnnotation], annotSet: String="", annotSetArr: Array[String]=Array.empty[String], annotSetCompare: String="=", limit: Integer=0, not: Boolean=false): Array[AQAnnotation] = {
     
-    val lcAnnotSet = if (annotSet != "")  annotSet.toLowerCase else null
-    val lcAnnotSetArr = if (!annotSetArr.isEmpty) annotSetArr.map(_.toLowerCase) else null
-    var rs = arr.filter(x => if (lcAnnotSet != null) { if (annotSetCompare == "=") x.annotSet == lcAnnotSet else x.annotSet != lcAnnotSet } else true)
-                .filter(x => if (lcAnnotSetArr != null) { if (annotSetCompare == "=") lcAnnotSetArr contains x.annotSet else !(lcAnnotSetArr contains x.annotSet) } else true) 
+    var rs = arr.filter(x => if (annotSet != "") { if (annotSetCompare == "=") x.annotSet == annotSet else x.annotSet != annotSet } else true)
+                .filter(x => if (!annotSetArr.isEmpty) { if (annotSetCompare == "=") annotSetArr contains x.annotSet else !(annotSetArr contains x.annotSet) } else true) 
 
     if (not) {
       rs = arr.diff(rs)
