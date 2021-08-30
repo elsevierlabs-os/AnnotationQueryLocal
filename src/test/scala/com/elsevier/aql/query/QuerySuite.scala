@@ -93,6 +93,18 @@ class QuerySuite extends AQBase {
   test("ContainedIn(FilterType(annots,'sentence'),FilterType(annots,'ce:para'),not=true)") {
     assert(ContainedIn(FilterType(annots,"sentence"),FilterType(annots,"ce:para"),not=true).size == 2)
   }  
+  
+  // Test ContainedInList
+  
+  test("ContainedInList(FilterProperty(annots,'orig','polynomial'),FilterType(annots, 'sentence'))") {
+    assert(ContainedInList(FilterProperty(annots,"orig","polynomial"),FilterType(annots, "sentence")).size == 31)
+    val result = ContainedInList(FilterProperty(annots,"orig","polynomial"),FilterType(annots, "sentence"))
+                 .sortBy{ x => (x._1.startOffset, x._1.endOffset) }
+    assert(result(0)._2.size == 1)
+    assert(result(0)._1 == AQAnnotation("S0022314X13001777","ge","sentence",18546,18607,1,None))
+    assert(result(0)._2(0) == AQAnnotation("S0022314X13001777","ge","word",18564,18574,7,Some(Map("orig" -> "polynomial", "lemma" -> "polynomial", "pos" -> "jj"))))
+  }
+  
     
   // Test Before
   
