@@ -18,13 +18,14 @@ object XMLConcordancer {
   
   val logger = org.apache.logging.log4j.LogManager.getLogger("XMLConcordancer")
   
-  /*
-   * results - Array[AQAnnotation] that you would like to display.  
-   * str - The string (for the text) for the document in the Array of Annotations.
-   * om - Array[AQAnnotation] of the Original Markup annotations.  The annotations should be for the same documents contained in the results.
-   * nrows - Number of results to display
-   * offset - Number of characters before/after each annotation in results to display
-   * highlightAnnotations - Array[AQAnnotation] that you would like to highlight in the results
+  /**
+   * @param results Array[AQAnnotation] that you would like to display.  
+   * @param str The string (for the text) for the document in the Array of Annotations.
+   * @param om Array[AQAnnotation] of the Original Markup annotations.  The annotations should be for the same documents contained in the results.
+   * @param nrows Number of results to display
+   * @param offset Number of characters before/after each annotation in results to display
+   * @param highlightAnnotations Array[AQAnnotation] that you would like to highlight in the results
+   * @return String of html
   */
 
   def apply(results: Array[AQAnnotation], str: String, om: Array[AQAnnotation], nrows:Integer=10,  offset:Integer=0,  highlightAnnotations:Array[AQAnnotation] = Array.empty[AQAnnotation], displayAttrs:Boolean=true): String = {

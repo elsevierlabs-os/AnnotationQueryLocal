@@ -8,12 +8,13 @@ import com.elsevier.aql.annotations.AQAnnotation
  */
 object RegexProperty {
 
-  /*
-   * arr -  Array of AQAnnotations that will be filtered by the specified property name and regex expression.
-   * name - Name of the property to filter.
-   * regex - Regex expression to use for the filter.
-   * limit - Number of AQAnnotations to return.
-   * not - Whether to negate the entire query. Default is false.
+  /**
+   * @param arr Array of AQAnnotations that will be filtered by the specified property name and regex expression.
+   * @param name Name of the property to filter.
+   * @param regex Regex expression to use for the filter.
+   * @param limit Number of AQAnnotations to return.
+   * @param not Whether to negate the entire query. Default is false.
+   * @return Array[AQAnnotation]
   */
   def apply(arr: Array[AQAnnotation], name: String, regex: String,  limit: Integer=0, not: Boolean=false): Array[AQAnnotation] = {
     

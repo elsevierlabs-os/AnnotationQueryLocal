@@ -12,9 +12,10 @@ import com.elsevier.aql.annotations.AQAnnotation
   */
 object ContainedInList {
   
-  /*
-   * left - Array of AQAnnotations, the ones we will return (as a list) if they are contained in AQAnnotations from 'right'.
-   * right - Array of AQAnnotations, the ones we are looking to see if they contain AQAnnotations from 'left'.
+  /**
+   * @param left - Array of AQAnnotations, the ones we will return (as a list) if they are contained in AQAnnotations from 'right'.
+   * @param right - Array of AQAnnotations, the ones we are looking to see if they contain AQAnnotations from 'left'.
+   * @return Array[AQAnnotation,Array[AQAnnotation]]
    */
   def apply(left: Array[AQAnnotation], right: Array[AQAnnotation]): Array[(AQAnnotation,Array[AQAnnotation])] = {
     

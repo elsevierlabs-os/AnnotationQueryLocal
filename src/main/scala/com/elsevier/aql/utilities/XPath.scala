@@ -11,10 +11,16 @@ import com.elsevier.aql.query.FilterType
 import com.elsevier.aql.query.FilterProperty
 
 /**
- * This function will calculate the xpath expression for each Original Markup (OM) AQAnnotation in the passed OM Array[AQAnnotation], populate the xpath property with this value in the AQAnnotation, and return a Array[AQAnnotation] with the xpath property populated.  
+ * This function will calculate the xpath expression for each Original Markup (OM) AQAnnotation in the passed OM Array[AQAnnotation], populate the xpath property with this value in the AQAnnotation, and return a Array[AQAnnotation] with the xpath property populated.
+ * The docId for the AQAnnotation will be used as the filename for the OM annotations.  
  */
 object XPath {
-  
+
+  /**
+   * @param arr The Array of OM Annotations that we want to populate the xpath property with the xpath for each annotation.
+   * @param omBase The path to the directory of OM caret delimited file of OM annotations.
+   * @return Array[AQAnnotation]
+   */
 def apply(arr: Array[AQAnnotation], omBase: String): Array[AQAnnotation] = {
 
     //  Get the Caret annotations for the specified OM file

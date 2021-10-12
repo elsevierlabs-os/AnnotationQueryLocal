@@ -8,9 +8,11 @@ import com.elsevier.aql.annotations.AQAnnotation
  */
 object BinaryOp {
 
-   /* arr1 - Array of AQAnnotations 
-    * arr2 - Array of AQAnnotations
-    * condition - Condition we want to apply
+   /**
+    * @param arr1 - Array of AQAnnotations 
+    * @param arr2 - Array of AQAnnotations
+    * @param condition - Condition we want to apply
+    * @return Array[AQAnnotation]
     */
    def apply(arr1: Array[AQAnnotation], arr2: Array[AQAnnotation], condition: (AQAnnotation, AQAnnotation) => Boolean): Array[AQAnnotation] = {
       

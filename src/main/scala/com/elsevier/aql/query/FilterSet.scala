@@ -9,13 +9,14 @@ import com.elsevier.aql.annotations.AQAnnotation
  */
 object FilterSet {
  
-  /*
-   * arr - Array of AQAnnotations that will be filtered by the specified annotation set.
-   * annotSet - String to filter against the annotSet field in the array of AQAnnotations.
-   * annotSetArr - Array of Strings to filter against the annotSet field in the array of AQAnnotations. An OR will be applied to the Strings.  Only used if annotSet was not specified.
-   * annotSetCompare - Comparison operator to use for the annotSet field in the array of AQAnnotations.  Default is '='.  Possible values are '=' and '!='.
-   * limit - Number of AQAnnotations to return.
-   * not - Whether to negate the entire query.  Default is false.
+  /**
+   * @param arr Array of AQAnnotations that will be filtered by the specified annotation set.
+   * @param annotSet String to filter against the annotSet field in the array of AQAnnotations.
+   * @param annotSetArr Array of Strings to filter against the annotSet field in the array of AQAnnotations. An OR will be applied to the Strings.  Only used if annotSet was not specified.
+   * @param annotSetCompare Comparison operator to use for the annotSet field in the array of AQAnnotations.  Default is '='.  Possible values are '=' and '!='.
+   * @param limit Number of AQAnnotations to return.
+   * @param not Whether to negate the entire query.  Default is false.
+   * @return Array[AQAnnotation]
   */
   def apply(arr: Array[AQAnnotation], annotSet: String="", annotSetArr: Array[String]=Array.empty[String], annotSetCompare: String="=", limit: Integer=0, not: Boolean=false): Array[AQAnnotation] = {
     

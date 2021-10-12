@@ -9,13 +9,14 @@ import com.elsevier.aql.annotations.AQAnnotation
  */
 object FilterType {
 
-  /*
-   * arr - Array of AQAnnotations that will be filtered by the specified annotation type.
-   * annotType - String to filter against the annotType field in the array of AQAnnotations.
-   * annotTypeArr - Array of Strings to filter against the annotType field in the array of AQAnnotations. An OR will be applied to the Strings.  Only used if annotType was not specified.
-   * annotTypeCompare - Comparison operator to use for the annotType field in the array of AQAnnotations.  Default is '='.  Possible values are '=' and '!='.
-   * limit - Number of AQAnnotations to return.
-   * not - Whether to negate the entire query.  Default is false.
+  /**
+   * @param arr Array of AQAnnotations that will be filtered by the specified annotation type.
+   * @param annotType String to filter against the annotType field in the array of AQAnnotations.
+   * @param annotTypeArr Array of Strings to filter against the annotType field in the array of AQAnnotations. An OR will be applied to the Strings.  Only used if annotType was not specified.
+   * @param annotTypeCompare Comparison operator to use for the annotType field in the array of AQAnnotations.  Default is '='.  Possible values are '=' and '!='.
+   * @param limit Number of AQAnnotations to return.
+   * @param not Whether to negate the entire query.  Default is false.
+   * @return Array[AQAnnotation]
   */
   def apply(arr: Array[AQAnnotation], annotType: String="", annotTypeArr: Array[String]=Array.empty[String], annotTypeCompare: String="=", limit: Integer=0, not: Boolean=false): Array[AQAnnotation] = {
     

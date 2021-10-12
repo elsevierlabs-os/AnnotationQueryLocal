@@ -13,12 +13,13 @@ object OrigPosLemConcordancer {
   
   val logger = org.apache.logging.log4j.LogManager.getLogger("OrigPosLemConcordancer")
   
-  /*
-   * sentences - Sentence annotations that you would like to display.  
-   * annots - The Array of AQAnnotations that will contain the the AQAnnotations (orig, lemma, pos) for the above sentences
-   * str - The string (for the text) for the document in the Array of Annotations.
-   * wordType -The annotType that identifies the AQAnnotation in the above annotations.
-   * nrows - Number of sentences to display
+  /**
+   * @param sentences Sentence annotations that you would like to display.  
+   * @param annots The Array of AQAnnotations that will contain the the AQAnnotations (orig, lemma, pos) for the above sentences
+   * @param str The string (for the text) for the document in the Array of Annotations.
+   * @param wordType The annotType that identifies the AQAnnotation in the above annotations.
+   * @param nrows Number of sentences to display
+   * @return String of html
   */
 
   def apply(sentences: Array[AQAnnotation], annots:Array[AQAnnotation],  str: String, wordType:String="word", nrows:Integer=10): String = {

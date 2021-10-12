@@ -9,10 +9,11 @@ import com.elsevier.aql.annotations.AQAnnotation
  */
 object GetCaretAnnotations {
   
-  /*
-   * aqAnnotations - Array of AQAnnotations to convert to Array of caret delimited annotations
-   * props - Array of property names  to make name-value pairs in the other column of caret delimited annotations.
-   * encodeProps - Array of property names  to url encode the value when making name-value pairs in the other column of caret delimited annotations.
+  /**
+   * @param aqAnnotations Array of AQAnnotations to convert to Array of caret delimited annotations
+   * @param props Array of property names  to make name-value pairs in the other column of caret delimited annotations.
+   * @param encodeProps Array of property names  to url encode the value when making name-value pairs in the other column of caret delimited annotations.
+   * @return Array[String] where each entry is a caret delimited string
   */
 
   def apply(aqAnnotations:Array[AQAnnotation],  props:Array[String]=Array.empty[String], encodeProps:Array[String]=Array.empty[String]): Array[String] = {

@@ -12,11 +12,12 @@ import com.elsevier.aql.annotations.AQAnnotation
 object Preceding {
 
 
-  /*
-   * annot - Array of AQAnnotations, the ones we will be using to look for preceding sibling annotations. 
-   * anchor - Array of AQAnnotations  starting point for using to look for preceding sibling annotations (use the startOffset and docId).
-   * container - Array of AQAnnotations to use when requiring the preceding sibling annotations to be contained in a specific annotation.
-   * cnt - Number of preceding sibling AQAnnotations to return.
+  /**
+   * @param annot Array of AQAnnotations, the ones we will be using to look for preceding sibling annotations. 
+   * @param anchor Array of AQAnnotations  starting point for using to look for preceding sibling annotations (use the startOffset and docId).
+   * @param container Array of AQAnnotations to use when requiring the preceding sibling annotations to be contained in a specific annotation.
+   * @param cnt Number of preceding sibling AQAnnotations to return.
+   * @return Array[AQAnnotation,Array[AQAnnotation]]
   */
   def apply(annot: Array[AQAnnotation], anchor: Array[AQAnnotation], container: Array[AQAnnotation]=Array.empty[AQAnnotation], cnt: Integer=3) : Array[(AQAnnotation,Array[AQAnnotation])] = {
     

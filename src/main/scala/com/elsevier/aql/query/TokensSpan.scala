@@ -12,10 +12,11 @@ import com.elsevier.aql.annotations.AQAnnotation
  */
 object TokensSpan {
 
-  /*
-   * tokens - Array of AQAnnotations (which we will use to concatenate for the string)
-   * spans - Array of AQAnnotations (identifies the start/end for the tokens to be used for the concatenated string)
-   * tokenProperty - The property field in the tokens to use for extracting the value for the concatenated string
+  /**
+   * @param tokens Array of AQAnnotations (which we will use to concatenate for the string)
+   * @param spans Array of AQAnnotations (identifies the start/end for the tokens to be used for the concatenated string)
+   * @param tokenProperty The property field in the tokens to use for extracting the value for the concatenated string
+   * @return Array[AQAnnotation]
   */
   def apply(tokens: Array[AQAnnotation], spans: Array[AQAnnotation], tokenProperty: String): Array[AQAnnotation] = {
     

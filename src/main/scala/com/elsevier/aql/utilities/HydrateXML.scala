@@ -16,11 +16,12 @@ object HydrateXML {
   
   val logger = org.apache.logging.log4j.LogManager.getLogger("HydrateXML")
   
-  /*
-   * arr - The Array of Annotations that we want to populate the xml property with the xml for this annotation 
-   * str - The string (for the text) for the document in the Array of Annotations.
-   * om - Array[AQAnnotation] of the Original Markup annotations.  The annotations should be for the same documents contained in the arr.
-   * displayAttrs - Whether we want to display attributes.  True means to display the attributes.
+  /**
+   * @param arr The Array of Annotations that we want to populate the xml property with the xml for this annotation 
+   * @param str The string (for the text) for the document in the Array of Annotations.
+   * @param om Array[AQAnnotation] of the Original Markup annotations.  The annotations should be for the same documents contained in the arr.
+   * @param displayAttrs Whether we want to display attributes.  True means to display the attributes.
+   * @return Array[AQAnnotation]
   */
 
   def apply(arr: Array[AQAnnotation], str: String, om: Array[AQAnnotation], displayAttrs:Boolean=true): Array[AQAnnotation] = {

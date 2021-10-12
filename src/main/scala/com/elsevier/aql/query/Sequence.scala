@@ -14,11 +14,12 @@ import com.elsevier.aql.annotations.AQAnnotation
  */
 object Sequence {
  
-  /*
-   * left - Array of AQAnnotations, the ones we will return if they are before AQAnnotations from 'right'.
-   * right - Array of AQAnnotations, the ones we are looking to see if are after AQAnnotations from 'left'.
-   * dist  - Number of characters  where endOffset from 'left' must occur before startOffset from 'right'. Default is Int.MaxValue.
-   * limit - Number of AQAnnotations to return.
+  /**
+   * @param left Array of AQAnnotations, the ones we will return if they are before AQAnnotations from 'right'.
+   * @param right Array of AQAnnotations, the ones we are looking to see if are after AQAnnotations from 'left'.
+   * @param dist Number of characters  where endOffset from 'left' must occur before startOffset from 'right'. Default is Int.MaxValue.
+   * @param limitNumber of AQAnnotations to return.
+   * @return Array[AQAnnotation]
   */
   def apply(left: Array[AQAnnotation], right: Array[AQAnnotation], dist: Integer=Int.MaxValue, limit: Integer=0): Array[AQAnnotation] = {
     

@@ -15,14 +15,15 @@ object Concordancer  {
 
   val logger = org.apache.logging.log4j.LogManager.getLogger("Concordancer")
     
-  /*
-   * results - Array[AQAnnotation] that you would like to display.  
-   * str - The string (for the text) for the document in the Array of Annotations.
-   * nrows - Number of results to display
-   * offset - Number of characters before/after each annotation in results to display
-   * highlightAnnotations - Array[AQAnnotation] that you would like to highlight in the results
-   * colorPropertyKey - Key in the property map of highlightAnnotations to get the value for the color lookup in the specified colorMap
-   * colorMap - Map the colorPropertyKey value to the specified color in the Map.  Default is blue when not found.
+  /**
+   * @param results Array[AQAnnotation] that you would like to display.  
+   * @param str The string (for the text) for the document in the Array of Annotations.
+   * @param nrows Number of results to display
+   * @param offset Number of characters before/after each annotation in results to display
+   * @param highlightAnnotations Array[AQAnnotation] that you would like to highlight in the results
+   * @param colorPropertyKey Key in the property map of highlightAnnotations to get the value for the color lookup in the specified colorMap
+   * @param colorMap Map the colorPropertyKey value to the specified color in the Map.  Default is blue when not found.
+   * @return String of html
    */
     
   def apply(results: Array[AQAnnotation], str: String, nrows:Integer=10, offset:Integer=0, highlightAnnotations:Array[AQAnnotation] =  Array.empty[AQAnnotation],

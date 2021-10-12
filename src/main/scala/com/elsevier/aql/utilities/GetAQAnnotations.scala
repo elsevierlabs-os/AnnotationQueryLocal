@@ -18,11 +18,12 @@ object GetAQAnnotations extends  {
   val logger = org.apache.logging.log4j.LogManager.getLogger("GetAQAnnotations")
   
   /**
-   * strArr - Array of Strings (caret delimited annotations) 
-   * docId - name of file in the directory (will also be used for docId in the AQAnnotation).
-   * props - Array of property names  (from the name-value pairs in the other column in caret delimited annotation) that you would like populated in the AQAnnotation Map of properties.
-   * lcProps - Array of property names where the value should be lower cased when populating the AQAnnotation Map of properties.
-   * decodeProps - Array of property names where the value should be url decoded when populating the AQAnnotation Map of properties.
+   * @param strArr Array of Strings (caret delimited annotations) 
+   * @param docId Name of file in the directory (will also be used for docId in the AQAnnotation).
+   * @param props Array of property names  (from the name-value pairs in the other column in caret delimited annotation) that you would like populated in the AQAnnotation Map of properties.
+   * @param lcProps Array of property names where the value should be lower cased when populating the AQAnnotation Map of properties.
+   * @param decodeProps Array of property names where the value should be url decoded when populating the AQAnnotation Map of properties.
+   * @return Array[AQAnnotation]
    */
   def apply(strArr: Array[String], docId: String, props:Array[String]=Array.empty[String], lcProps:Array[String]=Array.empty[String], decodeProps:Array[String]=Array.empty[String]): Array[AQAnnotation] = {
     
@@ -33,11 +34,12 @@ object GetAQAnnotations extends  {
 
   
   /**
-   * key - value to use for the docId in AQAnnotations
-   * str - Array of caret delimited annotations
-   * props - Array of property names  (from the name-value pairs in the other column in caret delimited annotation) that you would like populated in the AQAnnotation Map of properties.
-   * lcProps - Array of property names where the value should be lower cased when populating the AQAnnotation Map of properties.
-   * decodeProps - Array of property names where the value should be url decoded when populating the AQAnnotation Map of properties.
+   * @param key Value to use for the docId in AQAnnotations
+   * @param str Array of caret delimited annotations
+   * @param props Array of property names  (from the name-value pairs in the other column in caret delimited annotation) that you would like populated in the AQAnnotation Map of properties.
+   * @param lcProps Array of property names where the value should be lower cased when populating the AQAnnotation Map of properties.
+   * @param decodeProps Array of property names where the value should be url decoded when populating the AQAnnotation Map of properties.
+   * @return Array[AQAnnotation]
    */
   private def annots(key: String, strArr: Array[String], props:Array[String], lcProps:Array[String], decodeProps:Array[String]): Array[AQAnnotation] = {
 

@@ -13,13 +13,14 @@ import com.elsevier.aql.annotations.AQAnnotation
  */
 object Between {
 
-  /*
-   * middle - Array of AQAnnotations, the ones we will return if they are between AQAnnotations from 'left' and AQAnnotations from 'right.
-   * left - Array of AQAnnotations, the ones we are looking to see if they are before AQAnnotations from 'middle'.
-   * right - Array of AQAnnotations, the ones we are looking to see if they are after AQAnnotations from 'middle'.
-   * dist  - Number of characters  where startOffset from 'middle' must occur after endOffset of 'left' or endOffset from 'middle' must occur before startOffset of 'right'
-   * limit - Number of AQAnnotations to return.
-   * not - Whether to negate the entire query (think NOT between).  Default is false.
+  /**
+   * @param middle Array of AQAnnotations, the ones we will return if they are between AQAnnotations from 'left' and AQAnnotations from 'right.
+   * @param left Array of AQAnnotations, the ones we are looking to see if they are before AQAnnotations from 'middle'.
+   * @param right Array of AQAnnotations, the ones we are looking to see if they are after AQAnnotations from 'middle'.
+   * @param dist Number of characters  where startOffset from 'middle' must occur after endOffset of 'left' or endOffset from 'middle' must occur before startOffset of 'right'
+   * @param limit Number of AQAnnotations to return.
+   * @param not Whether to negate the entire query (think NOT between).  Default is false.
+   * @return Array[AQAnnotation]
   */
   def apply(middle: Array[AQAnnotation], left: Array[AQAnnotation], right: Array[AQAnnotation], dist: Integer=Int.MaxValue, limit: Integer=0, not: Boolean=false): Array[AQAnnotation] = {
 

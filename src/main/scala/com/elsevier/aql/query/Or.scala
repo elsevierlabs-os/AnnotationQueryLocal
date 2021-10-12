@@ -7,10 +7,11 @@ import com.elsevier.aql.annotations.AQAnnotation
  */
 object Or {
   
-  /*
-   * left - Array of AQAnnotations
-   * right - Array of AQAnnotations
-   * limit - Number of AQAnnotations to return.
+  /**
+   * @param left Array of AQAnnotations
+   * @param right Array of AQAnnotations
+   * @param limit Number of AQAnnotations to return.
+   * @return Array[AQAnnotation]
    */
   def apply(left: Array[AQAnnotation], right: Array[AQAnnotation], limit: Integer=0): Array[AQAnnotation] = {
 

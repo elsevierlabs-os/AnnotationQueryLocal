@@ -8,12 +8,13 @@ import com.elsevier.aql.annotations.AQAnnotation
  */
 object MatchProperty {
 
-  /*
-   * left - Array of AQAnnotations, the ones we will return if they match AQAnnotations from 'right'.
-   * right - Array of AQAnnotations the ones we are looking to see if they match AQAnnotations from 'left'.
-   * name - Name of the property to match.
-   * limit - Number of AQAnnotations to return.
-   * not - Whether to negate the entire query (think NOT contains).  Default is false.
+  /**
+   * @param left Array of AQAnnotations, the ones we will return if they match AQAnnotations from 'right'.
+   * @param right Array of AQAnnotations the ones we are looking to see if they match AQAnnotations from 'left'.
+   * @param name Name of the property to match.
+   * @param limit Number of AQAnnotations to return.
+   * @param not Whether to negate the entire query (think NOT contains).  Default is false.
+   * @return Array[AQAnnotation]
   */
   def apply(left: Array[AQAnnotation], right: Array[AQAnnotation], name: String, not: Boolean=false, limit: Integer=0): Array[AQAnnotation] = {
     

@@ -8,12 +8,13 @@ import com.elsevier.aql.annotations.AQAnnotation
  */
 object And {
   
-  /*
-   * left - Array of AQAnnotations
-   * right - Array of AQAnnotations.
-   * limit - Number of AQAnnotations to return.
-   * not - think and NOT (only return annotations from A that are not in B).  Default is false.
-   * leftOnly - Reuturn only the left or the left and right.  The default is to only return the left.
+  /**
+   * @param left Array of AQAnnotations
+   * @param right Array of AQAnnotations.
+   * @param limit Number of AQAnnotations to return.
+   * @param not Think and NOT (only return annotations from A that are not in B).  Default is false.
+   * @param leftOnly - Return only the left or the left and right.  The default is to only return the left.
+   * @return Array[AQAnnotation]
   */
   def apply(left: Array[AQAnnotation], right: Array[AQAnnotation], limit: Integer=0, not: Boolean=false, leftOnly: Boolean=true): Array[AQAnnotation] = {
 
